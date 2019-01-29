@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>WalkOverSudoku</title>
+      <meta name="description" content="A WalkOver Sudoku made in JS.">
+      <script src="assets/js/jquery-3.3.1.js"></script>
+      <script src="assets/js/walkover-sudoku.js"></script>
+		  <link rel="stylesheet" href="assets/css/walkover-sudoku.css">
+    </head>
+	<body>
+		<script type="text/javascript">
+		$( document ).ready( function() {
+			var game = Sudoku.getInstance();
+			$( '#container').append( game.getGameBoard() );
+
+			$( '#solve').click( function() {
+				game.solve();
+			} );
+			$( '#validate').click( function() {
+				game.validate();
+			} );
+			$( '#reset').click( function() {
+				game.reset();
+			} );
+		} );
+		</script>
+		<h1>WalkOver Sudoku</h1>
+		<div id="container"></div>
+		<div id="menu" class="sudoku-menu">
+			<button id="solve" class="btn-primary">Solve</button>
+			<button id="validate" class="btn-success">Validate Board</button>
+			<button id="reset" class="btn-danger">Reset</button>
+		</div>
+	</body>
+</html>
